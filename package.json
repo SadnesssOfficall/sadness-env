@@ -1,0 +1,63 @@
+{
+  "name": "sadness-env",
+  "version": "0.1.0",
+  "description": "Validate, mask and diff .env files from the CLI or from code. Schema-driven, zero runtime dependencies.",
+  "keywords": [
+    "env",
+    "dotenv",
+    "environment-variables",
+    "validation",
+    "cli",
+    "secrets",
+    "schema"
+  ],
+  "license": "MIT",
+  "author": "Sadness",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "sadness-env": "dist/cli/bin.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SadnesssOfficall/sadness-env.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SadnesssOfficall/sadness-env/issues"
+  },
+  "homepage": "https://github.com/SadnesssOfficall/sadness-env#readme",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "prepublishOnly": "npm run lint && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.4",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.0",
+    "vitest": "^4.1.11"
+  }
+}
